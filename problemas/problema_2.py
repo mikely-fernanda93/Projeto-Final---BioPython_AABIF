@@ -17,7 +17,7 @@ spec.loader.exec_module(ler_fasta_modulo)
 
 arquivo_fasta = 'arquivos/Flaviviridae-genomes.fasta'
 
-# Usar a função importada
+# Usar a função importada 
 ler_fasta_modulo.ler_fasta(arquivo_fasta) 
 
 print("OI") 
