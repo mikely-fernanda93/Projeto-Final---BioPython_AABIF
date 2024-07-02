@@ -20,7 +20,7 @@ arquivo_fasta = 'arquivos/Flaviviridae-genomes.fasta'
 # Usar a função importada
 ler_fasta_modulo.ler_fasta(arquivo_fasta)
 
-print("OI")
+print("OI") 
  
 
 
