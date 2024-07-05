@@ -1,3 +1,4 @@
+
 from Bio import SeqIO, Seq
 
 class Sequencia:
@@ -11,9 +12,9 @@ class Sequencia:
         percentuais = {base: (count / total_bases) * 100 for base, count in base_counts.items()}
         return percentuais
 
-def ler_fasta(arquivo):
+def ler_fasta(arquivo_fasta):
     sequencias = []
-    with open(arquivo, 'r') as f:
+    with open(arquivo_fasta, 'r') as f:
         linhas = f.readlines()
         nome, sequencia = None, ''
         for linha in linhas:
@@ -28,13 +29,13 @@ def ler_fasta(arquivo):
             sequencias.append(Sequencia(nome, sequencia))
     return sequencias
 
-# Exemplo de uso
-arquivo_fasta = '\arquivos\Flaviviridae-genomes.fasta'
-#arquivo_fasta = 'Flaviviridae-genomes.fasta'
-
+# Exemplo de uso##  
+arquivo_fasta = 'arquivos/Flaviviridae-genomes.fasta'
 bases_nucleotideos = ['A', 'T', 'C', 'G']
 
 sequencias = ler_fasta(arquivo_fasta)
+
+
 for seq in sequencias:
     percentuais = seq.calcular_percentual(bases_nucleotideos)
     print(f"Sequência: {seq.nome}")
@@ -43,3 +44,4 @@ for seq in sequencias:
     gc_content = percentuais['G'] + percentuais['C']
     print(f"Conteúdo GC: {gc_content:.2f}%")
     print()
+
